@@ -1,8 +1,15 @@
 #
 # .zshrc
 #
-# @author Jeff Geerling
+# @author Roy Castro
 #
+
+# Custom Profile Modifications                                                                                                                                
+if [ -f ~/.profile_customizations ]                                                                                                                             
+ then                                                                                                                                                    
+  source ~/.profile_customizations                                                                                                                               
+fi                                                                                                                                                      
+# End Custom Profile Modifications  
 
 # Colors.
 unset LSCOLORS
