@@ -17,7 +17,7 @@ export ZSH="/Users/roycastro/.oh-my-zsh"
 ZSH_THEME="agnoster"
 
 # Enable plugins.
-plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools)
+plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 
 # Custom $PATH with extra locations.
