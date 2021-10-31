@@ -4,13 +4,6 @@
 # @author Roy Castro
 #
 
-# Custom Profile Modifications                                                                                                                                
-if [ -f ~/.profile_customizations ]                                                                                                                             
-then                                                                                                                                                    
-  source ~/.profile_customizations                                                                                                                               
-fi                                                                                                                                                      
-# End Custom Profile Modifications  
-
 # Colors.
 unset LSCOLORS
 export CLICOLOR=1
@@ -19,17 +12,16 @@ export CLICOLOR_FORCE=1
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
 
-# Nicer prompt.
-export PS1=$'\n'"%F{green} %*%F{white} %3~ %F{white}$ "
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/roycastro/.oh-my-zsh"
+ZSH_THEME="agnoster"
 
 # Enable plugins.
-plugins=(git brew history kubectl history-substring-search)
+plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools)
+source $ZSH/oh-my-zsh.sh
 
 # Custom $PATH with extra locations.
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
-
-# Bash-style time output.
-export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
 
 # Include alias file (if present) containing aliases for ssh, etc.
 if [ -f ~/.aliases ]
@@ -37,8 +29,13 @@ then
   source ~/.aliases
 fi
 
-# Allow history search via up/down keys.
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# Custom Profile Modifications                                                                                                                                
+if [ -f ~/.profile_customizations ]                                                                                                                             
+then                                                                                                                                                    
+  source ~/.profile_customizations                                                                                                                               
+fi                                                                                                                                                      
+# End Custom Profile Modifications  
+
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
@@ -106,19 +103,6 @@ knownrm() {
 # Allow Composer to use almost as much RAM as Chrome.
 export COMPOSER_MEMORY_LIMIT=-1
 
-# Ask for confirmation when 'prod' is in a command string.
-#prod_command_trap () {
-#  if [[ $BASH_COMMAND == *prod* ]]
-#  then
-#    read -p "Are you sure you want to run this command on prod [Y/n]? " -n 1 -r
-#    if [[ $REPLY =~ ^[Yy]$ ]]
-#    then
-#      echo -e "\nRunning command \"$BASH_COMMAND\" \n"
-#    else
-#      echo -e "\nCommand was not run.\n"
-#      return 1
-#    fi
-#  fi
-#}
-#shopt -s extdebug
-#trap prod_command_trap DEBUG
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
