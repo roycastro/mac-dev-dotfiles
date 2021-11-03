@@ -13,7 +13,7 @@ export CLICOLOR_FORCE=1
 unsetopt nomatch
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/roycastro/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 ZSH_THEME="agnoster"
 
 # Enable plugins.
