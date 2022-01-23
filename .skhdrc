@@ -213,3 +213,5 @@ lctrl + alt + cmd + shift - q : osascript -e 'tell app "System Events" to log ou
 # alt - p : yabai -m window --toggle sticky;\
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
+
+alt - return : "${HOME}"/.dotfiles/configs/scripts/open_iterm2.sh
