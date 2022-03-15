@@ -17,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
 
 # Enable plugins.
-plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools docker docker-compose gcloud)
+plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools docker docker-compose gcloud terraform )
 source $ZSH/oh-my-zsh.sh
 
 # Custom $PATH with extra locations.
@@ -36,6 +36,13 @@ then
 fi                                                                                                                                                      
 # End Custom Profile Modifications  
 
+# Lazy Loaded Binaries                                                                                                                                
+if [ -f ~/.dotfiles/configs/scripts/lazy_loading.sh ]                                                                                                                             
+then                                                                                                                                                    
+  source ~/.dotfiles/configs/scripts/lazy_loading.sh                                                                                                                               
+fi                                                                                                                                                      
+# End Lazy Loaded Binaries  
+
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
@@ -48,8 +55,8 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 
 # Completions.
 autoload -Uz compinit && compinit
-source "$(brew --prefix)/Caskroom/yandex-cloud-cli/latest/yandex-cloud-cli/completion.zsh.inc"
-source <(kubectl completion zsh)
+# source "$(brew --prefix)/Caskroom/yandex-cloud-cli/latest/yandex-cloud-cli/completion.zsh.inc"
+# source <(kubectl completion zsh)
 # Case insensitive.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
@@ -111,5 +118,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export TNS_ADMIN="$HOME/"
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
