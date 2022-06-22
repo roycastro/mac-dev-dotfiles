@@ -12,13 +12,12 @@ yabai -m config window_shadow off
 yabai -m config window_opacity on
 yabai -m config window_opacity_duration 20000
 yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.7
-yabai -m config window_border off
-yabai -m config window_border_width 6
-# yabai -m config active_window_border_color   0xff7aa2f7
-# yabai -m config normal_window_border_color   0xff444b6a
-# yabai -m config active_window_border_color   0xff81A1C1
-# yabai -m config normal_window_border_color   0xff7A808C
+yabai -m config normal_window_opacity 1.0
+yabai -m config window_border on
+yabai -m config window_border_width 2
+yabai -m config active_window_border_color 0xffffffff
+yabai -m config normal_window_border_color 0xff444b6a
+
 yabai -m config insert_feedback_color 0xff61afef
 yabai -m config split_ratio 0.50
 yabai -m config auto_balance off
@@ -50,24 +49,23 @@ yabai -m config external_bar all:27:0
 
 # ===== Rules ==================================
 
-yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="macfeh" app="^macfeh$" manage=off
-yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
-yabai -m rule --add label="App Store" app="^App Store$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
-yabai -m rule --add label="KeePassXC" app="^KeePassXC$" manage=off
+yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Calculator" app="^Calculator$" manage=off
 yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="ignoreTeamsNotification" app="^Microsoft Teams$" title="^Microsoft Teams Notification$" manage=off
+yabai -m rule --add label="KeePassXC" app="^KeePassXC$" manage=off
+yabai -m rule --add label="macfeh" app="^macfeh$" manage=off
 yabai -m rule --add label="mpv" app="^mpv$" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
-yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add label="ignoreTeamsNotification" app="Microsoft Teams" title="Microsoft Teams Notification" manage=off
+yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
 
 # ===== Signals ================================
 
 ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar\"'"
-
 yabai -m signal --add event=application_front_switched action="${ubersicht_spaces_refresh_command}"
 yabai -m signal --add event=display_changed action="${ubersicht_spaces_refresh_command}"
 yabai -m signal --add event=space_changed action="${ubersicht_spaces_refresh_command}"
@@ -75,5 +73,17 @@ yabai -m signal --add event=window_created action="${ubersicht_spaces_refresh_co
 yabai -m signal --add event=window_destroyed action="${ubersicht_spaces_refresh_command}"
 yabai -m signal --add event=window_focused action="${ubersicht_spaces_refresh_command}"
 yabai -m signal --add event=window_title_changed action="${ubersicht_spaces_refresh_command}"
+
+# ===== Defeat Teams ================================
+yabai -m signal --add \
+  event=application_activated \
+  app="^Microsoft Teams$" \
+  action='${HOME}/.dotfiles/configs/scripts/defeat-teams.sh'
+
+yabai -m signal --add \
+  event=window_focused \
+  app="^Microsoft Teams$" \
+  title="^Microsoft Teams Notification$" \
+  action='${HOME}/.dotfiles/configs/scripts/defeat-teams.sh'
 
 echo "yabai configuration loaded.."
