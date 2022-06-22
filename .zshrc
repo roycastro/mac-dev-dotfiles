@@ -21,7 +21,7 @@ plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-naviga
 source $ZSH/oh-my-zsh.sh
 
 # Custom $PATH with extra locations.
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$(pyenv root)/shims:$PATH
 
 # Include alias file (if present) containing aliases for ssh, etc.
 if [ -f ~/.aliases ]
