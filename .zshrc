@@ -20,6 +20,11 @@ ZSH_THEME="agnoster"
 plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools docker docker-compose gcloud terraform )
 source $ZSH/oh-my-zsh.sh
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# Refer to the following link for more information on this command: https://github.com/pyenv/pyenv/issues/784#issuecomment-826444110
+eval "$(pyenv init --path --no-rehash)"
+
 # Custom $PATH with extra locations.
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$(pyenv root)/shims:$PATH
 
