@@ -14,7 +14,15 @@ unsetopt nomatch
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Enable plugins.
 plugins=(git brew ansible battery cp doctl extract history npm oc pm2 zsh-navigation-tools docker docker-compose gcloud terraform )
@@ -125,3 +133,6 @@ export TNS_ADMIN="$HOME/"
 
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
+
+# To customize prompt, run `p10k configure` or edit /var/folders/6q/2tdvf09d14d_gqpw6h7bflw40000gn/T/vscode-zsh/.p10k.zsh.
+[[ ! -f /var/folders/6q/2tdvf09d14d_gqpw6h7bflw40000gn/T/vscode-zsh/.p10k.zsh ]] || source /var/folders/6q/2tdvf09d14d_gqpw6h7bflw40000gn/T/vscode-zsh/.p10k.zsh
