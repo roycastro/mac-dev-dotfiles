@@ -131,8 +131,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export TNS_ADMIN="$HOME/"
 
+# Removed in favor of the lazy loading mechanism. 
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
 
-# To customize prompt, run `p10k configure` or edit /var/folders/6q/2tdvf09d14d_gqpw6h7bflw40000gn/T/vscode-zsh/.p10k.zsh.
-[[ ! -f /var/folders/6q/2tdvf09d14d_gqpw6h7bflw40000gn/T/vscode-zsh/.p10k.zsh ]] || source /var/folders/6q/2tdvf09d14d_gqpw6h7bflw40000gn/T/vscode-zsh/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
