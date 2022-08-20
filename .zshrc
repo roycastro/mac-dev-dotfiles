@@ -131,9 +131,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export TNS_ADMIN="$HOME/"
 
-# Removed in favor of the lazy loading mechanism. 
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
