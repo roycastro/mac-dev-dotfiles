@@ -42,6 +42,9 @@ then
   source ~/.aliases
 fi
 
+# Alias BAT as default cat.
+alias cat=bat
+
 # Custom Profile Modifications                                                                                                                                
 if [ -f ~/.profile_customizations ]                                                                                                                             
 then                                                                                                                                                    
@@ -136,3 +139,5 @@ source $(brew --prefix nvm)/nvm.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
