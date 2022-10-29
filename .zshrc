@@ -140,4 +140,32 @@ source $(brew --prefix nvm)/nvm.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Open tmux session if it exists, otherwise create a new one.
+function openTmux() {
+ session=$1
+ if [[ ! "$1" ]] ; then
+  session="default"
+ fi
+
+ if tmux has-session -t "$1" 2>/dev/null; then
+   tmux attach-session -t "$1"
+ else
+   tmux new-session -s "$1"
+ fi
+}
+
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
+    *)            fzf "$@" ;;
+  esac
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
