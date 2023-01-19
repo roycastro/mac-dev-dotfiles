@@ -1,34 +1,38 @@
 {
   "global": {
     "theme": "dark",
-    "floatingBar": false,
-    "noBarBg": false,
-    "noColorInData": true,
+    "floatingBar": true,
+    "noBarBg": true,
+    "noColorInData": false,
     "bottomBar": false,
     "inlineSpacesOptions": false,
     "disableNotifications": false,
     "compactMode": true,
     "widgetMaxWidth": "160px",
-    "spacesBackgroundColorAsForeground": false,
-    "widgetsBackgroundColorAsForeground": false,
+    "spacesBackgroundColorAsForeground": true,
+    "widgetsBackgroundColorAsForeground": true,
     "font": "Menlo for Powerline",
-    "fontSize": "11px",
-    "yabaiPath": "/opt/homebrew/bin/yabai",
-    "shell": "bash",
+    "fontSize": "14px",
+    "yabaiPath": "/usr/local/bin/yabai",
+    "shell": "sh",
     "slidingAnimationPace": 4,
     "externalConfigFile": true
   },
   "themes": {
     "lightTheme": "NightShiftLight",
-    "darkTheme": "TokyoNight"
+    "darkTheme": "OneDark"
   },
   "process": {
-    "displayOnlyCurrent": true,
-    "showCurrentSpaceMode": false
+    "displayOnlyCurrent": false,
+    "centered": true,
+    "showCurrentSpaceMode": false,
+    "hideWindowTitle": true,
+    "displayOnlyIcon": false
   },
   "spacesDisplay": {
     "exclusions": "",
     "titleExclusions": "",
+    "spacesExclusions": "",
     "exclusionsAsRegex": false,
     "displayAllSpacesOnAllScreens": false,
     "hideDuplicateAppsInSpaces": false,
@@ -41,20 +45,20 @@
     "processWidget": true,
     "weatherWidget": false,
     "batteryWidget": true,
-    "wifiWidget": true,
+    "wifiWidget": false,
     "vpnWidget": false,
     "zoomWidget": false,
     "soundWidget": true,
-    "micWidget": false,
+    "micWidget": true,
     "dateWidget": true,
     "timeWidget": true,
-    "keyboardWidget": false,
+    "keyboardWidget": true,
     "spotifyWidget": false,
     "cryptoWidget": false,
     "stockWidget": false,
     "musicWidget": false,
     "mpdWidget": false,
-    "dndWidget": true,
+    "dndWidget": false,
     "browserTrackWidget": false
   },
   "weatherWidgetOptions": {
@@ -72,6 +76,7 @@
   "networkWidgetOptions": {
     "refreshFrequency": 20000,
     "networkDevice": "en0",
+    "hideWifiIfDisabled": false,
     "toggleWifiOnClick": false
   },
   "vpnWidgetOptions": {
