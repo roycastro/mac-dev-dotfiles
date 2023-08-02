@@ -154,7 +154,10 @@ function openTmux() {
  fi
 }
 
-export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_TMUX=1
+export FZF_TMUX_OPTS='-p80%,60%'
+export FZF_DEFAULT_OPTS='--preview "cat {}" --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
+export FZF_DEFAULT_COMMAND="fd --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
