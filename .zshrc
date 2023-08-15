@@ -142,13 +142,16 @@ source $(brew --prefix nvm)/nvm.sh
 
 # Open tmux session if it exists, otherwise create a new one.
 function openTmux() {
- session=$1
- if [[ ! "$1" ]] ; then
-  session="default"
+ local session=$1
+ if [[ ! "$session" ]] ; then
+  session=$(tmux list-sessions -F \#S | gum filter --placeholder "Pick session...")
+  if [ $? -ne 0 ]; then
+   return 0 
+  fi 
  fi
 
- if tmux has-session -t "$1" 2>/dev/null; then
-   tmux attach-session -t "$1"
+ if tmux has-session -t "$session" 2>/dev/null; then
+   tmux attach-session -t $session || tmux switch-client -t $session
  else
    tmux new-session -s "$1"
  fi
@@ -156,7 +159,7 @@ function openTmux() {
 
 export FZF_TMUX=1
 export FZF_TMUX_OPTS='-p80%,60%'
-export FZF_DEFAULT_OPTS='--preview "cat {}" --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
+export FZF_DEFAULT_OPTS='--bind '?:toggle-preview' --preview-window down:20:hidden:wrap  --preview "cat {}" --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
 export FZF_DEFAULT_COMMAND="fd --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
@@ -166,8 +169,9 @@ _fzf_comprun() {
   shift
 
   case "$command" in
-    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
-    *)            fzf "$@" ;;
+    cd)           fzf-tmux "$@" -p80%,60% --preview 'tree -C {} | head -200' ;;
+    ssh)          fzf-tmux "$@" -p80%,60% --preview '~/.dotfiles/configs/scripts/ip_host_info.sh {} | head -200' ;;
+    *)            fzf-tmux "$@" -p80%,60% ;;
   esac
 }
 
