@@ -1,0 +1,1803 @@
+{
+  "global": {
+    "ask_for_confirmation_before_quitting": true,
+    "check_for_updates_on_startup": true,
+    "show_in_menu_bar": true,
+    "show_profile_name_in_menu_bar": true,
+    "unsafe_ui": false
+  },
+  "profiles": [
+    {
+      "complex_modifications": {
+        "parameters": {
+          "basic.simultaneous_threshold_milliseconds": 50,
+          "basic.to_delayed_action_delay_milliseconds": 500,
+          "basic.to_if_alone_timeout_milliseconds": 1000,
+          "basic.to_if_held_down_threshold_milliseconds": 500,
+          "mouse_motion_to_scroll.speed": 100
+        },
+        "rules": [
+          {
+            "description": "CAPS LOCK + hjkl to arrow keys",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "down_arrow"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "up_arrow"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "left_arrow"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "right_arrow"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "caps_lock pressed",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "caps_lock pressed",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "CAPS LOCK + shift + hjkl to scroll",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "vertical_wheel": 40
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "vertical_wheel": -40
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "horizontal_wheel": -30
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "horizontal_wheel": -30
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "caps_lock pressed",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "caps_lock pressed",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Yabai Rules Suite - Space Focus Management (includes everything that implies another space will be focused)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "consumer_key_code": "eject"
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 1"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 1"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 2"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 3"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 4"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 5"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 6"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 7"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 8"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "9",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 9"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "0",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 10"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 11"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 12"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 12"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 13"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 14"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 15"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 16"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "7",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 17"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "8",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --focus 18"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 1; /usr/local/bin/yabai -m space --focus 1"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 2; /usr/local/bin/yabai -m space --focus 2"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 3; /usr/local/bin/yabai -m space --focus 3"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 4; /usr/local/bin/yabai -m space --focus 4"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 5; /usr/local/bin/yabai -m space --focus 5"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 6; /usr/local/bin/yabai -m space --focus 6"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 7; /usr/local/bin/yabai -m space --focus 7"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 8; /usr/local/bin/yabai -m space --focus 8"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "9",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 9; /usr/local/bin/yabai -m space --focus 9"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "0",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 10; /usr/local/bin/yabai -m space --focus 10"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "1",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 11; /usr/local/bin/yabai -m space --focus 11"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "2",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 12; /usr/local/bin/yabai -m space --focus 12"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 13; /usr/local/bin/yabai -m space --focus 13"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "4",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 14; /usr/local/bin/yabai -m space --focus 14"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 15; /usr/local/bin/yabai -m space --focus 15"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 16; /usr/local/bin/yabai -m space --focus 16"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "7",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 17; /usr/local/bin/yabai -m space --focus 17"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "8",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 18; /usr/local/bin/yabai -m space --focus 18"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "8",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space 18; /usr/local/bin/yabai -m space --focus 18"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Yabai Rules Suite - Windows Management (includes everything that implies another window will be focused, created, destroyed or modified somehow. Not includes in any case Space focus changes)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command", "left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --balance"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus west"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window west --resize right:-20:0 2> /dev/null || /usr/local/bin/yabai -m window --resize right:-20:0"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus south"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window north --resize bottom:0:20 2> /dev/null || /usr/local/bin/yabai -m window --resize bottom:0:20"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus north"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window south --resize top:0:-20 2> /dev/null || /usr/local/bin/yabai -m window --resize top:0:-20"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_control", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --focus east"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window east --resize left:20:0 2> /dev/null || /usr/local/bin/yabai -m window --resize left:20:0"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --toggle zoom-fullscreen"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --swap west || $(yabai -m window --display west; /usr/local/bin/yabai -m display --focus west)"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --swap south || $(yabai -m window --display south; /usr/local/bin/yabai -m display --focus south)"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --swap north || $(yabai -m window --display north; /usr/local/bin/yabai -m display --focus north)"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --swap east || $(yabai -m window --display east; /usr/local/bin/yabai -m display --focus east)"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "page_up",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option",
+                      "left_command",
+                      "left_control",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space  prev; /usr/local/bin/yabai -m space --focus prev"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "page_down",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option",
+                      "left_command",
+                      "left_control",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m window --space  next; /usr/local/bin/yabai -m space --focus next"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Yabai Rules Suite - General Commands",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "mandatory": ["left_option"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "${HOME}/.dotfiles/configs/scripts/open_iterm2.sh"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option",
+                      "left_command",
+                      "left_control",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --destroy"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/usr/local/bin/yabai -m space --create"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "q",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_option",
+                      "left_command",
+                      "left_control",
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "osascript -e 'tell app \"System Events\" to log out'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.parallels\\.desktop\\.console$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "q",
+                  "modifiers": {
+                    "mandatory": ["left_option", "left_command", "left_control"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/brew services restart yabai"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": false,
+            "product_id": 835,
+            "vendor_id": 1452
+          },
+          "ignore": false,
+          "manipulate_caps_lock_led": true,
+          "simple_modifications": [],
+          "treat_as_built_in_keyboard": false
+        },
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "identifiers": {
+            "is_keyboard": false,
+            "is_pointing_device": true,
+            "product_id": 835,
+            "vendor_id": 1452
+          },
+          "ignore": true,
+          "manipulate_caps_lock_led": false,
+          "simple_modifications": [],
+          "treat_as_built_in_keyboard": false
+        },
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": true,
+            "product_id": 45921,
+            "vendor_id": 1133
+          },
+          "ignore": false,
+          "manipulate_caps_lock_led": true,
+          "simple_modifications": [],
+          "treat_as_built_in_keyboard": true
+        },
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "identifiers": {
+            "is_keyboard": true,
+            "is_pointing_device": true,
+            "product_id": 45091,
+            "vendor_id": 1133
+          },
+          "ignore": false,
+          "manipulate_caps_lock_led": true,
+          "simple_modifications": [],
+          "treat_as_built_in_keyboard": true
+        }
+      ],
+      "fn_function_keys": [
+        {
+          "from": {
+            "key_code": "f1"
+          },
+          "to": [
+            {
+              "consumer_key_code": "display_brightness_decrement"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f2"
+          },
+          "to": [
+            {
+              "consumer_key_code": "display_brightness_increment"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f3"
+          },
+          "to": [
+            {
+              "apple_vendor_keyboard_key_code": "mission_control"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f4"
+          },
+          "to": [
+            {
+              "apple_vendor_keyboard_key_code": "spotlight"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f5"
+          },
+          "to": [
+            {
+              "consumer_key_code": "dictation"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f6"
+          },
+          "to": [
+            {
+              "key_code": "f6"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f7"
+          },
+          "to": [
+            {
+              "consumer_key_code": "rewind"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f8"
+          },
+          "to": [
+            {
+              "consumer_key_code": "play_or_pause"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f9"
+          },
+          "to": [
+            {
+              "consumer_key_code": "fast_forward"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f10"
+          },
+          "to": [
+            {
+              "consumer_key_code": "mute"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f11"
+          },
+          "to": [
+            {
+              "consumer_key_code": "volume_decrement"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "f12"
+          },
+          "to": [
+            {
+              "consumer_key_code": "volume_increment"
+            }
+          ]
+        }
+      ],
+      "name": "Default profile",
+      "parameters": {
+        "delay_milliseconds_before_open_device": 1000
+      },
+      "selected": true,
+      "simple_modifications": [],
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "indicate_sticky_modifier_keys_state": true,
+        "mouse_key_xy_scale": 100
+      }
+    }
+  ]
+}
