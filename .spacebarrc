@@ -25,7 +25,7 @@ spacebar -m config space_icon_strip 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 spacebar -m config spaces_for_all_displays off
 spacebar -m config clock_format "%d/%m/%y %R"
 spacebar -m config right_shell on
-spacebar -m config right_shell_command "whoami"
 spacebar -m config power_icon_strip 💡 🔌
+spacebar -m config right_shell_command "echo $(whoami)"
 
 echo "spacebar configuration loaded.."
