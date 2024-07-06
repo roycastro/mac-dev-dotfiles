@@ -20,7 +20,7 @@ local apple = sbar.add("item", {
   },
   padding_left = 1,
   padding_right = 1,
-  click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s 0"
+  click_script = "open -a 'System Preferences'"
 })
 
 -- Double border for apple using a single item bracket

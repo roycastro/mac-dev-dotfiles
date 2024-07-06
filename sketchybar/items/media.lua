@@ -1,8 +1,10 @@
 local icons = require("icons")
 local colors = require("colors")
 
-local whitelist = { ["Spotify"] = true,
-                    ["Music"] = true    };
+local whitelist = {
+  ["Spotify"] = true,
+  ["Music"] = true
+};
 
 local media_cover = sbar.add("item", {
   position = "right",
@@ -19,7 +21,7 @@ local media_cover = sbar.add("item", {
   updates = true,
   popup = {
     align = "center",
-    horizontal = true,
+    vertical = true,
   }
 })
 
@@ -110,9 +112,9 @@ media_cover:subscribe("mouse.exited", function(env)
 end)
 
 media_cover:subscribe("mouse.clicked", function(env)
-  media_cover:set({ popup = { drawing = "toggle" }})
+  media_cover:set({ popup = { drawing = "toggle" } })
 end)
 
 media_title:subscribe("mouse.exited.global", function(env)
-  media_cover:set({ popup = { drawing = false }})
+  media_cover:set({ popup = { drawing = false } })
 end)

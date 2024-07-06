@@ -35,6 +35,7 @@ local volume_icon = sbar.add("item", "widgets.volume2", {
       size = 14.0,
     },
   },
+  popup = { align = "top" }
 })
 
 local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
@@ -51,7 +52,7 @@ sbar.add("item", "widgets.volume.padding", {
 })
 
 local volume_slider = sbar.add("slider", popup_width, {
-  position = "popup." .. volume_bracket.name,
+  position = "popup." .. volume_icon.name,
   slider = {
     highlight_color = colors.blue,
     background = {
@@ -59,14 +60,20 @@ local volume_slider = sbar.add("slider", popup_width, {
       corner_radius = 3,
       color = colors.bg2,
     },
-    knob= {
+    knob = {
       string = "􀀁",
       drawing = true,
     },
   },
+  margin_left = 60,
   background = { color = colors.bg1, height = 2, y_offset = -20 },
   click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
+
+volume_icon:subscribe("mouse.clicked", function(env)
+  local drawing = volume_icon:query().popup.drawing
+  volume_icon:set({ popup = { drawing = "toggle" } })
+end)
 
 volume_percent:subscribe("volume_change", function(env)
   local volume = tonumber(env.INFO)
@@ -92,9 +99,9 @@ volume_percent:subscribe("volume_change", function(env)
 end)
 
 local function volume_collapse_details()
-  local drawing = volume_bracket:query().popup.drawing == "on"
+  local drawing = volume_icon:query().popup.drawing == "on"
   if not drawing then return end
-  volume_bracket:set({ popup = { drawing = false } })
+  volume_icon:set({ popup = { drawing = false } })
   sbar.remove('/volume.device\\.*/')
 end
 
@@ -105,13 +112,13 @@ local function volume_toggle_details(env)
     return
   end
 
-  local should_draw = volume_bracket:query().popup.drawing == "off"
+  local should_draw = volume_icon:query().popup.drawing == "off"
   if should_draw then
-    volume_bracket:set({ popup = { drawing = true } })
+    volume_icon:set({ popup = { drawing = true } })
     sbar.exec("SwitchAudioSource -t output -c", function(result)
       current_audio_device = result:sub(1, -2)
       sbar.exec("SwitchAudioSource -a -t output", function(available)
-        current = current_audio_device
+        local current = current_audio_device
         local color = colors.grey
         local counter = 0
 
@@ -121,11 +128,14 @@ local function volume_toggle_details(env)
             color = colors.white
           end
           sbar.add("item", "volume.device." .. counter, {
-            position = "popup." .. volume_bracket.name,
+            position = "popup." .. volume_icon.name,
             width = popup_width,
             align = "center",
             label = { string = device, color = color },
-            click_script = 'SwitchAudioSource -s "' .. device .. '" && sketchybar --set /volume.device\\.*/ label.color=' .. colors.grey .. ' --set $NAME label.color=' .. colors.white
+            click_script = 'SwitchAudioSource -s "' ..
+                device ..
+                '" && sketchybar --set /volume.device\\.*/ label.color=' ..
+                colors.grey .. ' --set $NAME label.color=' .. colors.white
 
           })
           counter = counter + 1
@@ -147,4 +157,3 @@ volume_icon:subscribe("mouse.scrolled", volume_scroll)
 volume_percent:subscribe("mouse.clicked", volume_toggle_details)
 volume_percent:subscribe("mouse.exited.global", volume_collapse_details)
 volume_percent:subscribe("mouse.scrolled", volume_scroll)
-

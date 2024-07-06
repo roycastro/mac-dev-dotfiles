@@ -9,27 +9,27 @@ for i = 1, 10, 1 do
   local space = sbar.add("space", "space." .. i, {
     space = i,
     icon = {
-      font = { family = settings.font.numbers },
+      font = { family = settings.font.numbers, size = 12.0 },
       string = i,
-      padding_left = 15,
-      padding_right = 8,
+      padding_left = 1,
+      padding_right = 1,
       color = colors.white,
-      highlight_color = colors.red,
+      highlight_color = colors.blue,
     },
     label = {
-      padding_right = 20,
-      color = colors.grey,
-      highlight_color = colors.white,
-      font = "sketchybar-app-font:Regular:16.0",
+      padding_right = 40,
+      color = colors.white,
+      highlight_color = colors.blue,
+      font = "sketchybar-app-font:Regular:24.0",
       y_offset = -1,
     },
     padding_right = 1,
-    padding_left = 1,
+    padding_left = 20,
     background = {
-      color = colors.bg1,
-      border_width = 1,
+      color = colors.transparent,
+      border_width = 0,
       height = 26,
-      border_color = colors.black,
+      border_color = colors.transparent,
     },
     popup = { background = { border_width = 5, border_color = colors.black } }
   })
@@ -55,8 +55,8 @@ for i = 1, 10, 1 do
 
   local space_popup = sbar.add("item", {
     position = "popup." .. space.name,
-    padding_left= 5,
-    padding_right= 0,
+    padding_left = 5,
+    padding_right = 0,
     background = {
       drawing = true,
       image = {
