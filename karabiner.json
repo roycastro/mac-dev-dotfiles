@@ -270,7 +270,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 1"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 1"
                   }
                 ],
                 "type": "basic"
@@ -292,7 +292,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 1"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 1"
                   }
                 ],
                 "type": "basic"
@@ -314,7 +314,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 2"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 2"
                   }
                 ],
                 "type": "basic"
@@ -336,7 +336,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 3"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 3"
                   }
                 ],
                 "type": "basic"
@@ -358,7 +358,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 4"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 4"
                   }
                 ],
                 "type": "basic"
@@ -380,7 +380,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 5"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 5"
                   }
                 ],
                 "type": "basic"
@@ -402,7 +402,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 6"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 6"
                   }
                 ],
                 "type": "basic"
@@ -424,7 +424,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 7"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 7"
                   }
                 ],
                 "type": "basic"
@@ -446,7 +446,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 8"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 8"
                   }
                 ],
                 "type": "basic"
@@ -468,7 +468,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 9"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 9"
                   }
                 ],
                 "type": "basic"
@@ -490,7 +490,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 10"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 10"
                   }
                 ],
                 "type": "basic"
@@ -512,7 +512,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 11"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 11"
                   }
                 ],
                 "type": "basic"
@@ -534,7 +534,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 12"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 12"
                   }
                 ],
                 "type": "basic"
@@ -556,7 +556,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 12"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 12"
                   }
                 ],
                 "type": "basic"
@@ -578,7 +578,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 13"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 13"
                   }
                 ],
                 "type": "basic"
@@ -600,7 +600,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 14"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 14"
                   }
                 ],
                 "type": "basic"
@@ -622,7 +622,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 15"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 15"
                   }
                 ],
                 "type": "basic"
@@ -644,7 +644,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 16"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 16"
                   }
                 ],
                 "type": "basic"
@@ -666,7 +666,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 17"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 17"
                   }
                 ],
                 "type": "basic"
@@ -688,7 +688,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --focus 18"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace 18"
                   }
                 ],
                 "type": "basic"
@@ -710,7 +710,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 1; /usr/local/bin/yabai -m space --focus 1"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 1; /opt/homebrew/bin/aerospace workspace 1"
                   }
                 ],
                 "type": "basic"
@@ -732,7 +732,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 2; /usr/local/bin/yabai -m space --focus 2"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 2; /opt/homebrew/bin/aerospace workspace 2"
                   }
                 ],
                 "type": "basic"
@@ -754,7 +754,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 3; /usr/local/bin/yabai -m space --focus 3"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 3; /opt/homebrew/bin/aerospace workspace 3"
                   }
                 ],
                 "type": "basic"
@@ -776,7 +776,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 4; /usr/local/bin/yabai -m space --focus 4"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 4; /opt/homebrew/bin/aerospace workspace 4"
                   }
                 ],
                 "type": "basic"
@@ -798,7 +798,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 5; /usr/local/bin/yabai -m space --focus 5"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 5; /opt/homebrew/bin/aerospace workspace 5"
                   }
                 ],
                 "type": "basic"
@@ -820,7 +820,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 6; /usr/local/bin/yabai -m space --focus 6"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 6; /opt/homebrew/bin/aerospace workspace 6"
                   }
                 ],
                 "type": "basic"
@@ -842,7 +842,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 7; /usr/local/bin/yabai -m space --focus 7"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 7; /opt/homebrew/bin/aerospace workspace 7"
                   }
                 ],
                 "type": "basic"
@@ -864,7 +864,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 8; /usr/local/bin/yabai -m space --focus 8"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 8; /opt/homebrew/bin/aerospace workspace 8"
                   }
                 ],
                 "type": "basic"
@@ -886,7 +886,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 9; /usr/local/bin/yabai -m space --focus 9"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 9; /opt/homebrew/bin/aerospace workspace 9"
                   }
                 ],
                 "type": "basic"
@@ -908,7 +908,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 10; /usr/local/bin/yabai -m space --focus 10"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 10; /opt/homebrew/bin/aerospace workspace 10"
                   }
                 ],
                 "type": "basic"
@@ -930,7 +930,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 11; /usr/local/bin/yabai -m space --focus 11"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 11; /opt/homebrew/bin/aerospace workspace 11"
                   }
                 ],
                 "type": "basic"
@@ -952,7 +952,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 12; /usr/local/bin/yabai -m space --focus 12"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 12; /opt/homebrew/bin/aerospace workspace 12"
                   }
                 ],
                 "type": "basic"
@@ -974,7 +974,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 13; /usr/local/bin/yabai -m space --focus 13"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 13; /opt/homebrew/bin/aerospace workspace 13"
                   }
                 ],
                 "type": "basic"
@@ -996,7 +996,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 14; /usr/local/bin/yabai -m space --focus 14"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 14; /opt/homebrew/bin/aerospace workspace 14"
                   }
                 ],
                 "type": "basic"
@@ -1018,7 +1018,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 15; /usr/local/bin/yabai -m space --focus 15"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 15; /opt/homebrew/bin/aerospace workspace 15"
                   }
                 ],
                 "type": "basic"
@@ -1040,7 +1040,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 16; /usr/local/bin/yabai -m space --focus 16"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 16; /opt/homebrew/bin/aerospace workspace 16"
                   }
                 ],
                 "type": "basic"
@@ -1062,7 +1062,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 17; /usr/local/bin/yabai -m space --focus 17"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 17; /opt/homebrew/bin/aerospace workspace 17"
                   }
                 ],
                 "type": "basic"
@@ -1084,29 +1084,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 18; /usr/local/bin/yabai -m space --focus 18"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^com\\.parallels\\.desktop\\.console$"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "8",
-                  "modifiers": {
-                    "mandatory": ["left_control", "left_command", "left_option"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "/usr/local/bin/yabai -m window --space 18; /usr/local/bin/yabai -m space --focus 18"
+                    "shell_command": "/opt/homebrew/bin/aerospace move-node-to-workspace 18; /opt/homebrew/bin/aerospace move-node-to-workspace 18"
                   }
                 ],
                 "type": "basic"
@@ -1133,7 +1111,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m space --balance"
+                    "shell_command": "/opt/homebrew/bin/aerospace flatten-workspace-tree"
                   }
                 ],
                 "type": "basic"
@@ -1155,7 +1133,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --focus west"
+                    "shell_command": "/opt/homebrew/bin/aerospace focus left"
                   }
                 ],
                 "type": "basic"
@@ -1199,7 +1177,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --focus south"
+                    "shell_command": "/opt/homebrew/bin/aerospace focus down"
                   }
                 ],
                 "type": "basic"
@@ -1243,7 +1221,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --focus north"
+                    "shell_command": "/opt/homebrew/bin/aerospace focus up"
                   }
                 ],
                 "type": "basic"
@@ -1287,7 +1265,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --focus east"
+                    "shell_command": "/opt/homebrew/bin/aerospace focus right"
                   }
                 ],
                 "type": "basic"
@@ -1331,7 +1309,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --toggle zoom-fullscreen"
+                    "shell_command": "/opt/homebrew/bin/aerospace fullscreen"
                   }
                 ],
                 "type": "basic"
@@ -1353,7 +1331,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --swap west || $(yabai -m window --display west; /usr/local/bin/yabai -m display --focus west)"
+                    "shell_command": "/opt/homebrew/bin/aerospace move left"
                   }
                 ],
                 "type": "basic"
@@ -1375,7 +1353,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --swap south || $(yabai -m window --display south; /usr/local/bin/yabai -m display --focus south)"
+                    "shell_command": "/opt/homebrew/bin/aerospace move down"
                   }
                 ],
                 "type": "basic"
@@ -1397,7 +1375,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --swap north || $(yabai -m window --display north; /usr/local/bin/yabai -m display --focus north)"
+                    "shell_command": "/opt/homebrew/bin/aerospace move up"
                   }
                 ],
                 "type": "basic"
@@ -1419,7 +1397,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --swap east || $(yabai -m window --display east; /usr/local/bin/yabai -m display --focus east)"
+                    "shell_command": "/opt/homebrew/bin/aerospace move right"
                   }
                 ],
                 "type": "basic"
@@ -1446,7 +1424,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space  prev; /usr/local/bin/yabai -m space --focus prev"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace-back-and-forth"
                   }
                 ],
                 "type": "basic"
@@ -1473,7 +1451,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/yabai -m window --space  next; /usr/local/bin/yabai -m space --focus next"
+                    "shell_command": "/opt/homebrew/bin/aerospace workspace-back-and-forth"
                   }
                 ],
                 "type": "basic"
@@ -1611,7 +1589,9 @@
         {
           "disable_built_in_keyboard_if_exists": false,
           "fn_function_keys": [],
+          "game_pad_swap_sticks": false,
           "identifiers": {
+            "is_game_pad": false,
             "is_keyboard": true,
             "is_pointing_device": false,
             "product_id": 835,
@@ -1619,13 +1599,21 @@
           },
           "ignore": false,
           "manipulate_caps_lock_led": true,
+          "mouse_flip_horizontal_wheel": false,
+          "mouse_flip_vertical_wheel": false,
+          "mouse_flip_x": false,
+          "mouse_flip_y": false,
+          "mouse_swap_wheels": false,
+          "mouse_swap_xy": false,
           "simple_modifications": [],
           "treat_as_built_in_keyboard": false
         },
         {
           "disable_built_in_keyboard_if_exists": false,
           "fn_function_keys": [],
+          "game_pad_swap_sticks": false,
           "identifiers": {
+            "is_game_pad": false,
             "is_keyboard": false,
             "is_pointing_device": true,
             "product_id": 835,
@@ -1633,13 +1621,21 @@
           },
           "ignore": true,
           "manipulate_caps_lock_led": false,
+          "mouse_flip_horizontal_wheel": false,
+          "mouse_flip_vertical_wheel": false,
+          "mouse_flip_x": false,
+          "mouse_flip_y": false,
+          "mouse_swap_wheels": false,
+          "mouse_swap_xy": false,
           "simple_modifications": [],
           "treat_as_built_in_keyboard": false
         },
         {
           "disable_built_in_keyboard_if_exists": false,
           "fn_function_keys": [],
+          "game_pad_swap_sticks": false,
           "identifiers": {
+            "is_game_pad": false,
             "is_keyboard": true,
             "is_pointing_device": true,
             "product_id": 45921,
@@ -1647,13 +1643,21 @@
           },
           "ignore": false,
           "manipulate_caps_lock_led": true,
+          "mouse_flip_horizontal_wheel": false,
+          "mouse_flip_vertical_wheel": false,
+          "mouse_flip_x": false,
+          "mouse_flip_y": false,
+          "mouse_swap_wheels": false,
+          "mouse_swap_xy": false,
           "simple_modifications": [],
           "treat_as_built_in_keyboard": true
         },
         {
           "disable_built_in_keyboard_if_exists": false,
           "fn_function_keys": [],
+          "game_pad_swap_sticks": false,
           "identifiers": {
+            "is_game_pad": false,
             "is_keyboard": true,
             "is_pointing_device": true,
             "product_id": 45091,
@@ -1661,8 +1665,58 @@
           },
           "ignore": false,
           "manipulate_caps_lock_led": true,
+          "mouse_flip_horizontal_wheel": false,
+          "mouse_flip_vertical_wheel": false,
+          "mouse_flip_x": false,
+          "mouse_flip_y": false,
+          "mouse_swap_wheels": false,
+          "mouse_swap_xy": false,
           "simple_modifications": [],
           "treat_as_built_in_keyboard": true
+        },
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "game_pad_swap_sticks": false,
+          "identifiers": {
+            "is_game_pad": true,
+            "is_keyboard": false,
+            "is_pointing_device": false,
+            "product_id": 45322,
+            "vendor_id": 1103
+          },
+          "ignore": true,
+          "manipulate_caps_lock_led": false,
+          "mouse_flip_horizontal_wheel": false,
+          "mouse_flip_vertical_wheel": false,
+          "mouse_flip_x": false,
+          "mouse_flip_y": false,
+          "mouse_swap_wheels": false,
+          "mouse_swap_xy": false,
+          "simple_modifications": [],
+          "treat_as_built_in_keyboard": false
+        },
+        {
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [],
+          "game_pad_swap_sticks": false,
+          "identifiers": {
+            "is_game_pad": true,
+            "is_keyboard": false,
+            "is_pointing_device": false,
+            "product_id": 46727,
+            "vendor_id": 1103
+          },
+          "ignore": true,
+          "manipulate_caps_lock_led": false,
+          "mouse_flip_horizontal_wheel": false,
+          "mouse_flip_vertical_wheel": false,
+          "mouse_flip_x": false,
+          "mouse_flip_y": false,
+          "mouse_swap_wheels": false,
+          "mouse_swap_xy": false,
+          "simple_modifications": [],
+          "treat_as_built_in_keyboard": false
         }
       ],
       "fn_function_keys": [
